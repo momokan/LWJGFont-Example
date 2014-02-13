@@ -1,3 +1,3 @@
 # LWJGFont Example
 
-a example of [https://github.com/momokan/LWJGFont](LWJGFont)
+a example of [LWJGFont](https://github.com/momokan/LWJGFont)
