@@ -2,9 +2,9 @@
 
 import java.io.IOException;
 
-import lwjgfont.myfont.Migu1pRegularH40Font;
-import lwjgfont.texture.Texture;
-import lwjgfont.texture.TextureLoader;
+
+import net.chocolapod.lwjgfont.myfont.Migu1pRegularH28Font;
+import net.chocolapod.lwjgfont.texture.Texture;
 
 import org.lwjgl.LWJGLException;
 import org.lwjgl.opengl.Display;
@@ -39,13 +39,13 @@ public class LwjgfontExample {
 	private int			depth = 300;
 
 	private Texture					texture;
-	private Migu1pRegularH40Font	font;
+	private Migu1pRegularH28Font	font;
 
 	public void start() {
 		try {
 			//  ウインドウを生成する
 			Display.setDisplayMode(new DisplayMode(width, height));
-			Display.setTitle("Textured Monolith");
+			Display.setTitle("LWJGFont example");
 			Display.create();
 		} catch(LWJGLException e) {
 			e.printStackTrace();
@@ -102,7 +102,7 @@ public class LwjgfontExample {
 		//  クラスパスから画像を検索して読み込む
 //      texture = new TextureLoader().loadTexture("images/texture.png", this.getClass().getClassLoader());
 		
-		font = new Migu1pRegularH40Font();
+		font = new Migu1pRegularH28Font();
 	}
 
 	private void terminate() {
@@ -139,8 +139,16 @@ public class LwjgfontExample {
 //		texture.draw(0, height);
 //		texture.draw(0, 100, 100, 0, 0, 0, 100, 100);
 		try {
-			font.drawString("中ニ病でも恋がしたい", 10, 100, 0);
-			font.drawString("abcdefghijklmnopqrstuvwxyz", 10, 150, 0);
+			font.drawString("我らの父は、", 10, 580, 0);
+			font.drawString("偉大なるその血を4つに分けた。", 10, 530, 0);
+			font.drawString("長兄は責任感だけを受け継ぎ、", 10, 460, 0);
+			font.drawString("次兄はのんきな性格だけを受け継ぎ、", 10, 410, 0);
+			font.drawString("弟は純真さだけを受け継ぎ、", 10, 360, 0);
+			font.drawString("私はあほうぶりだけを受け継いだ。", 10, 310, 0);
+			font.drawString("てんでバラバラの兄弟をつなぎ止めている", 10, 240, 0);
+			font.drawString("のは、海よりも深い母の愛と、偉大なる父", 10, 190, 0);
+			font.drawString("との”さよなら”である。1つの大きな”さよ", 10, 140, 0);
+			font.drawString("なら”が、残された者をつなぐこともある。", 10, 90, 0);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
