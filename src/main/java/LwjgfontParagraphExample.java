@@ -1,5 +1,6 @@
 
 
+import net.chocolapod.lwjgfont.myfont.Migu1pRegularH28Font;
 import net.chocolapod.lwjgfont.myfont.Migu1pRegularH45Font;
 
 import org.lwjgl.LWJGLException;
@@ -7,7 +8,7 @@ import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
 import org.lwjgl.opengl.GL11;
 
-public class LwjgfontExample {
+public class LwjgfontParagraphExample {
 
 	public void start() {
 		try {
@@ -31,7 +32,7 @@ public class LwjgfontExample {
 			GL11.glMatrixMode(GL11.GL_MODELVIEW);
 
 			//	LWJGFont でフォントを読み込む
-			Migu1pRegularH45Font	font = new Migu1pRegularH45Font();
+			Migu1pRegularH28Font	font = new Migu1pRegularH28Font();
 			
 			//	フォントの色を設定する
 			font.setColor(0f, 1f, 0f);
@@ -40,7 +41,10 @@ public class LwjgfontExample {
 				GL11.glClear(GL11.GL_COLOR_BUFFER_BIT);
 
 				//	LWJGFont で文字列を表示する
-				font.drawString("ハロー☆LWJGFont", 50, 200, 0);
+				font.drawParagraph(
+						"LWJGFont は、日本語などの英語以外の言語をビットマップフォントとして\r画面表示する際の課題を解決するために開発されました。\nあらかじめ任意のフォントで任意のサイズの文字を PNG 画像としてマッピングし、プログラム実行時には表示したい文章をその PNG 画像から自動で構築・画面表示することができます。",
+						500,
+						10, 250, 0);
 
 				Display.update();
 			}
@@ -52,6 +56,6 @@ public class LwjgfontExample {
 	}
 
 	public static void main(String[] args) {
-		new LwjgfontExample().start();
+		new LwjgfontParagraphExample().start();
 	}
 }
