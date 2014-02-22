@@ -2,10 +2,8 @@ package lwjgfont.example.demo;
 
 
 import net.chocolapod.lwjgfont.AbstractFont;
-import net.chocolapod.lwjgfont.MappedCharacter;
+import net.chocolapod.lwjgfont.example_demo.DragonquestfcH28Font;
 import net.chocolapod.lwjgfont.myfont.Migu1pRegularH28Font;
-import net.chocolapod.lwjgfont.myfont.Migu1pRegularH36Font;
-import net.chocolapod.lwjgfont.myfont.Migu1pRegularH45Font;
 import net.chocolapod.lwjgfont.texture.Texture;
 import net.chocolapod.lwjgfont.texture.TextureLoader;
 
