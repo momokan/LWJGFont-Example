@@ -1,12 +1,11 @@
 package lwjgfont.example.demo;
 
 
-import net.chocolapod.lwjgfont.myfont.Migu1pRegularH28Font;
-import net.chocolapod.lwjgfont.myfont.Migu1pRegularH45Font;
-import net.chocolapod.lwjgfont.texture.Texture;
-import net.chocolapod.lwjgfont.texture.TextureLoader;
+import net.chocolapod.lwjgfont.LWJGFont;
+import net.chocolapod.lwjgfont.example_demo.Migu1pRegularH28Font;
+import net.chocolapod.lwjgfont.texture.FontTexture;
+import net.chocolapod.lwjgfont.texture.FontTextureLoader;
 
-import org.lwjgl.LWJGLException;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
 import org.lwjgl.opengl.GL11;
@@ -14,14 +13,14 @@ import org.lwjgl.opengl.GL11;
 public class DemoMonologue {
 
 	public void start() {
-		Texture		background;
+		FontTexture		background;
 		
 		try {
 			//  ウインドウを生成する
 			Display.setDisplayMode(new DisplayMode(800, 640));
 			Display.create();
 
-			background = TextureLoader.loadTexture(DemoMonologue.class, "monologue.png");
+			background = FontTextureLoader.loadTexture(DemoMonologue.class, "monologue.png");
 		} catch(Exception e) {
 			e.printStackTrace();
 			return;
@@ -39,7 +38,7 @@ public class DemoMonologue {
 			GL11.glMatrixMode(GL11.GL_MODELVIEW);
 
 			//	LWJGFont でフォントを読み込む
-			Migu1pRegularH28Font	font = new Migu1pRegularH28Font();
+			LWJGFont	font = new Migu1pRegularH28Font();
 			
 			while (!Display.isCloseRequested()) {
 				GL11.glClear(GL11.GL_COLOR_BUFFER_BIT);

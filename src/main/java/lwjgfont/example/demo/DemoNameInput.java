@@ -1,13 +1,11 @@
 package lwjgfont.example.demo;
 
 
-import net.chocolapod.lwjgfont.AbstractFont;
-import net.chocolapod.lwjgfont.example_demo.DragonquestfcH28Font;
-import net.chocolapod.lwjgfont.myfont.Migu1pRegularH28Font;
-import net.chocolapod.lwjgfont.texture.Texture;
-import net.chocolapod.lwjgfont.texture.TextureLoader;
+import net.chocolapod.lwjgfont.LWJGFont;
+import net.chocolapod.lwjgfont.example_demo.Migu1pRegularH28Font;
+import net.chocolapod.lwjgfont.texture.FontTexture;
+import net.chocolapod.lwjgfont.texture.FontTextureLoader;
 
-import org.lwjgl.LWJGLException;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
 import org.lwjgl.opengl.GL11;
@@ -23,18 +21,18 @@ public class DemoNameInput {
 			"ナ　ニ　ヌ　ネ　ノ　　ワ　　　ヲ　　　ン　　おわり",
 		};
 		
-		Texture		background;
-		Texture		hero;
-		Texture		cursor;
+		FontTexture		background;
+		FontTexture		hero;
+		FontTexture		cursor;
 		
 		try {
 			//  ウインドウを生成する
 			Display.setDisplayMode(new DisplayMode(800, 640));
 			Display.create();
 
-			background = TextureLoader.loadTexture(DemoNameInput.class, "name_window.png");
-			hero = TextureLoader.loadTexture(DemoNameInput.class, "hero.png");
-			cursor = TextureLoader.loadTexture(DemoNameInput.class, "cursor.png");
+			background = FontTextureLoader.loadTexture(DemoNameInput.class, "name_window.png");
+			hero = FontTextureLoader.loadTexture(DemoNameInput.class, "hero.png");
+			cursor = FontTextureLoader.loadTexture(DemoNameInput.class, "cursor.png");
 		} catch(Exception e) {
 			e.printStackTrace();
 			return;
@@ -52,7 +50,7 @@ public class DemoNameInput {
 			GL11.glMatrixMode(GL11.GL_MODELVIEW);
 
 			//	LWJGFont でフォントを読み込む
-			AbstractFont	font = new Migu1pRegularH28Font();
+			LWJGFont	font = new Migu1pRegularH28Font();
 			
 			while (!Display.isCloseRequested()) {
 				GL11.glClear(GL11.GL_COLOR_BUFFER_BIT);

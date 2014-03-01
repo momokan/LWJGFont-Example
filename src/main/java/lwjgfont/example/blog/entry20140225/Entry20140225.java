@@ -1,4 +1,4 @@
-package lwjgfont.example.demo;
+package lwjgfont.example.blog.entry20140225;
 
 
 import net.chocolapod.lwjgfont.LWJGFont;
@@ -10,17 +10,20 @@ import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
 import org.lwjgl.opengl.GL11;
 
-public class DemoSoundNovel {
+public class Entry20140225 {
 
 	public void start() {
+		int			width = 650;
+		int			height = 200;
 		FontTexture		background;
 		
 		try {
 			//  ウインドウを生成する
-			Display.setDisplayMode(new DisplayMode(800, 640));
+			Display.setDisplayMode(new DisplayMode(width, height));
+			Display.setTitle("LWJGFont Demo");
 			Display.create();
 
-			background = FontTextureLoader.loadTexture(DemoSoundNovel.class, "shrine.png");
+			background = FontTextureLoader.loadTexture(Entry20140225.class, "washi.jpg");
 		} catch(Exception e) {
 			e.printStackTrace();
 			return;
@@ -34,7 +37,7 @@ public class DemoSoundNovel {
 
 			GL11.glMatrixMode(GL11.GL_PROJECTION);
 			GL11.glLoadIdentity();
-			GL11.glOrtho(0, 800, 0, 640, 0, 100);
+			GL11.glOrtho(0, width, 0, height, 0, 100);
 			GL11.glMatrixMode(GL11.GL_MODELVIEW);
 
 			//	LWJGFont でフォントを読み込む
@@ -45,8 +48,24 @@ public class DemoSoundNovel {
 			while (!Display.isCloseRequested()) {
 				GL11.glClear(GL11.GL_COLOR_BUFFER_BIT);
 
-				background.draw(0, 640);
+				background.draw(0, 360);
 				
+				//	LWJGFont の描画色を設定する
+//				font.setColor(0.75f, 0.3f, 0.3f);
+
+				//	LWJGFont の透過色を設定する
+//				font.setAlpha(0.4f);
+				
+				//	LWJGFont で文字列を表示する
+//				font.drawString("いろはにほへと ちりぬるを", 100, 50, 0);
+				
+				//	LWJGFont で文字列を右詰めで折り返し表示する
+				font.drawParagraph("いろはにほへと ちりぬるを わかよたれそ つねならむ\nうゐのおくやま けふこえて あさきゆめみし ゑひもせす", 100, 150, 0, 450, LWJGFont.ALIGN.RIGHT);
+				
+				//	文字列の表示幅を取得する
+//				int		stringWidth = font.stringWidth("いろはにほへと ちりぬるを"); 
+				
+				/*
 				//	LWJGFont で文字列を表示する
 				font.drawParagraph(
 						new String[] {
@@ -62,7 +81,8 @@ public class DemoSoundNovel {
 							"そこには年老いた宮司と",
 							"三人の巫女が暮らしていた"
 						},
-						50, 600, 0, 700, LWJGFont.ALIGN.RIGHT);
+						20, height, 0, width - 40, AbstractFont.ALIGN.RIGHT);
+				*/
 
 				Display.update();
 			}
@@ -75,6 +95,6 @@ public class DemoSoundNovel {
 	}
 
 	public static void main(String[] args) {
-		new DemoSoundNovel().start();
+		new Entry20140225().start();
 	}
 }

@@ -1,7 +1,9 @@
+package lwjgfont.example;
 
 
 
-import net.chocolapod.lwjgfont.myfont.Migu1pRegularH45Font;
+import net.chocolapod.lwjgfont.LWJGFont;
+import net.chocolapod.lwjgfont.example_demo.Migu1pRegularH45Font;
 
 import org.lwjgl.LWJGLException;
 import org.lwjgl.opengl.Display;
@@ -32,7 +34,7 @@ public class LwjgfontExample {
 			GL11.glMatrixMode(GL11.GL_MODELVIEW);
 
 			//	LWJGFont でフォントを読み込む
-			Migu1pRegularH45Font	font = new Migu1pRegularH45Font();
+			LWJGFont	font = new Migu1pRegularH45Font();
 			
 			//	フォントの色を設定する
 			font.setColor(0f, 1f, 0f);

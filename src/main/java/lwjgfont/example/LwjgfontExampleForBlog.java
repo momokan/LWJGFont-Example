@@ -1,34 +1,22 @@
+package lwjgfont.example;
 
 
-import java.io.IOException;
-
-
-import net.chocolapod.lwjgfont.myfont.Migu1pRegularH28Font;
-import net.chocolapod.lwjgfont.texture.Texture;
-
-import org.lwjgl.LWJGLException;
-import org.lwjgl.opengl.Display;
-import org.lwjgl.opengl.DisplayMode;
-import static org.lwjgl.opengl.GL11.GL_BACK;
 import static org.lwjgl.opengl.GL11.GL_COLOR_BUFFER_BIT;
-import static org.lwjgl.opengl.GL11.GL_CULL_FACE;
 import static org.lwjgl.opengl.GL11.GL_MODELVIEW;
 import static org.lwjgl.opengl.GL11.GL_PROJECTION;
-import static org.lwjgl.opengl.GL11.GL_QUADS;
 import static org.lwjgl.opengl.GL11.GL_TEXTURE_2D;
-import static org.lwjgl.opengl.GL11.glBegin;
 import static org.lwjgl.opengl.GL11.glClear;
-import static org.lwjgl.opengl.GL11.glColor4f;
-import static org.lwjgl.opengl.GL11.glCullFace;
 import static org.lwjgl.opengl.GL11.glEnable;
-import static org.lwjgl.opengl.GL11.glEnd;
 import static org.lwjgl.opengl.GL11.glLoadIdentity;
 import static org.lwjgl.opengl.GL11.glMatrixMode;
 import static org.lwjgl.opengl.GL11.glOrtho;
-import static org.lwjgl.opengl.GL11.glRotatef;
-import static org.lwjgl.opengl.GL11.glScalef;
-import static org.lwjgl.opengl.GL11.glTranslatef;
- 
+
+import java.io.IOException;
+
+import net.chocolapod.lwjgfont.LWJGFont;
+import net.chocolapod.lwjgfont.example_demo.Migu1pRegularH28Font;
+import net.chocolapod.lwjgfont.texture.FontTexture;
+
 import org.lwjgl.LWJGLException;
 import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.DisplayMode;
@@ -38,8 +26,8 @@ public class LwjgfontExampleForBlog {
 	private int			height = 640;
 	private int			depth = 300;
 
-	private Texture					texture;
-	private Migu1pRegularH28Font	font;
+	private FontTexture				texture;
+	private LWJGFont				font;
 
 	public void start() {
 		try {
