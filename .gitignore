@@ -3,4 +3,8 @@
 /.settings
 /target
 /natives
-/work
+/work/*.jar
+/work/*.pom.xml
+/work/*.log
+/work/temp
+/work/characters
