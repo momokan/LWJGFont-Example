@@ -33,6 +33,13 @@
         <version>1.0</version>
     </dependency>
 
+    <!-- Slick2D を試してみる -->
+    <dependency>
+      <groupId>org.slick2d</groupId>
+	  <artifactId>slick2d-core</artifactId>
+	  <version>1.0.1</version>
+	</dependency>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
