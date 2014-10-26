@@ -23,8 +23,8 @@ public class LWJGFontOnSlick2D extends BasicGame{
 	//描画処理
 	public void render(GameContainer arg0, Graphics g) throws SlickException {
 		try {
-//			drawStringWithLWJGFont(g, "はろー", 100, 100);
-			font.drawString("はろー", 100, 100, 0);
+			drawStringWithLWJGFont(g, "はろー", 100, 100);
+//			font.drawString("はろー", 100, 100, 0);
 		} catch (IOException e) { e.printStackTrace(); }
 	}
 
@@ -53,11 +53,13 @@ public class LWJGFontOnSlick2D extends BasicGame{
 		g.popTransform();
 	}
 
-	//初期処理
-	public void init(GameContainer arg0) throws SlickException {}
+	public void init(GameContainer arg0) throws SlickException {
+		//	初期処理
+	}
 
-	//更新処理
-	public void update(GameContainer arg0, int arg1) throws SlickException {}
+	public void update(GameContainer arg0, int arg1) throws SlickException {
+		//	更新処理
+	}
 	
 	public static void main(String[] args) throws SlickException{
 		AppGameContainer app = new AppGameContainer(new LWJGFontOnSlick2D());
